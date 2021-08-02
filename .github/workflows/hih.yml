@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "https://github.com/ToxicCybers/kinguserbot"
+          find: "TeamDevil"
 
-          replace: "https://github.com/Deulex-Userbot/Deulex"
+          replace: "TeamDeulex"
 
       - name: Create Pull Request
 
