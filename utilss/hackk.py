@@ -1,13 +1,13 @@
 from pyrogram import filters
 from pyrogram.types import Message
-from kingbot import kingbot, setbot , vr , Adminsettings
+from DeulexClient import DeulexClient, setbot , vr , Adminsettings
 import asyncio
 __MODULE__ = "hack"
 __HELP__ = """
 ->`hack`
 __**This command helps you to fake hack animation**__
 """
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("hack", vr.get("HNDLR")))
+@DeulexClient.on_message(filters.user(Adminsettings) & filters.command("hack", vr.get("HNDLR")))
 async def hak(client, message):
   await message.edit_text("Looking for WhatsApp databases in targeted person...")
   asyncio.sleep(2)

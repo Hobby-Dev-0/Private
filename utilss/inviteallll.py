@@ -1,9 +1,9 @@
 from pyrogram import filters 
-from kingbot import kingbot, setbot , vr, Adminsettings
+from DeulexClient import DeulexClient, setbot , vr, Adminsettings
 from pyrogram.errors import UserPrivacyRestricted
 
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("inviteall", vr.get("HNDLR")))
+@DeulexClient.on_message(filters.user(Adminsettings) & filters.command("inviteall", vr.get("HNDLR")))
 async def hikjgakd(_, message):
     mg=await message.edit_text("Roaring up")
     idoun= message.text
@@ -17,12 +17,12 @@ async def hikjgakd(_, message):
        else:
           trgt= idoun.strip()
     i=0
-    async for memb in kingbot.iter_chat_members(trgt):
+    async for memb in DeulexClient.iter_chat_members(trgt):
       membe= memb.user
       membid= membe.id
       await mg.edit(f"trying to add{membe.mention}")
       try:
-        await kingbot.add_chat_members(message.chat.id, membid)
+        await DeulexClient.add_chat_members(message.chat.id, membid)
         i= i+1
       except UserPrivacyRestricted:
         continue

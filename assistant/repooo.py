@@ -1,5 +1,5 @@
 from pyrogram import filters 
-from kingbot import kingbot, setbot , vr, Adminsettings
+from DeulexClient import DeulexClient, setbot , vr, Adminsettings
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultArticle,InputTextMessageContent
 __MODULE__ = "Repo"
 __HELP__ = """**This command helps you to Repo**
@@ -7,11 +7,11 @@ __HELP__ = """**This command helps you to Repo**
 """
 
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("repo", vr.get("HNDLR")))
+@DeulexClient.on_message(filters.user(Adminsettings) & filters.command("repo", vr.get("HNDLR")))
 async def hikjbhgakd(_, message):
   booet= await setbot.get_me()
-  res=await kingbot.get_inline_bot_results(booet.username, "repo")
-  mg= await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
+  res=await DeulexClient.get_inline_bot_results(booet.username, "repo")
+  mg= await DeulexClient.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
   message.delete()
 @setbot.on_inline_query(filters.regex("repo"))
 async def ibnrp(_ , inline_query):

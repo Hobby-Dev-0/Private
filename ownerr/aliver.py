@@ -1,6 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from kingbot import setbot, Adminsettings, kingbot, START_TIME , vr, vcbot
+from DeulexClient import setbot, Adminsettings, DeulexClient, START_TIME , vr, vcbot
 from datetime import datetime
 import time
 __MODULE__ = "alive"
@@ -10,7 +10,7 @@ __**This command helps you to check wether userbot is alive**__
 -> `alive`
 """
 Alive_pic = "https://telegra.ph/file/664686c15a83ccf26239b.mp4"
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("alive",vr.get("HNDLR")))
+@DeulexClient.on_message(filters.user(Adminsettings) & filters.command("alive",vr.get("HNDLR")))
 async def gooe_search(client, message):
     start_time = time.time()
     uptime = (datetime.now() - START_TIME)

@@ -1,12 +1,12 @@
 from datetime import datetime
-from kingbot import kingbot, setbot , vr, Adminsettings
+from DeulexClient import DeulexClient, setbot , vr, Adminsettings
 from pyrogram import filters
 from pyrogram.types import Message
 __MODULE__ = "Stats"
 __HELP__="""
 `stats` gives you your current stats i.e. Your group , channel , adminship and bot count
 """
-@kingbot.on_message(filters.command("stats",vr.get("HNDLR"))  & filters.user(Adminsettings))
+@DeulexClient.on_message(filters.command("stats",vr.get("HNDLR"))  & filters.user(Adminsettings))
 async def stats(_, message):
     await message.edit_text("Collecting stats")
     start = datetime.now()
@@ -16,9 +16,9 @@ async def stats(_, message):
     c = 0
     b = 0
     a_chat = 0
-    Meh=await kingbot.get_me()
+    Meh=await DeulexClient.get_me()
     group = ["supergroup", "group"]
-    async for dialog in kingbot.iter_dialogs():
+    async for dialog in DeulexClient.iter_dialogs():
         if dialog.chat.type == "private":
             u += 1
         elif dialog.chat.type == "bot":

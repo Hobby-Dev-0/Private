@@ -1,4 +1,4 @@
-# kingbot userbot
+# DeulexClient userbot
 ## A stable userbot base library , based on Pyrogram
 
 
@@ -6,7 +6,7 @@
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ToxicCybers/kinguserbot)
 
 ## Installation 
-'pip install py-kingbot'
+'pip install py-DeulexClient'
 
 ## Inspiration 
 I was greatly inspired from some awesome projects like ultroid and nana. Both are milestone in their respective ways. This userbot is just a effort to create something good and honour the previous work done by some awesome people. I want to dedicate my work to one of my ideals pokurt. Have a great time with this bot and other developer are heartly invited to contribute

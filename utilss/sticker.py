@@ -16,7 +16,7 @@ from pyrogram import emoji
 from pyrogram.errors import StickersetInvalid, YouBlockedUser
 from pyrogram.raw.functions.messages import GetStickerSet
 from pyrogram.raw.types import InputStickerSetShortName
-from kingbot import kingbot, vr , Adminsettings
+from DeulexClient import DeulexClient, vr , Adminsettings
 from utilss.paste import get_text
 from utilss.vitoo import run_cmd
 from pyrogram import filters
@@ -64,7 +64,7 @@ async def convert_to_image(message, client) -> [None, str]:
         vid_path = await client.download_media(message.reply_to_message)
         await run_cmd(f"ffmpeg -i {vid_path} -filter:v scale=500:500 -an {final_path}")
     return final_path
-@kingbot.on_message(filters.command("packinfo", vr.get("HNDLR")) & filters.user(Adminsettings))
+@DeulexClient.on_message(filters.command("packinfo", vr.get("HNDLR")) & filters.user(Adminsettings))
 async def packinfo(client, message):
     rep = await message.edit_text("`Processing...`")
     if not message.reply_to_message:
@@ -99,7 +99,7 @@ async def packinfo(client, message):
     await rep.edit(output)
 
 
-@kingbot.on_message(filters.command("kang", vr.get("HNDLR")) & filters.user(Adminsettings))
+@DeulexClient.on_message(filters.command("kang", vr.get("HNDLR")) & filters.user(Adminsettings))
 async def packinfo(client, message):
     rep= await message.edit_text("`Using Megic To Kang This Sticker...`")
     if not message.reply_to_message:

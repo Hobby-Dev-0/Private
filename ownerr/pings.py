@@ -1,5 +1,5 @@
 from pyrogram import filters, Client
-from kingbot import kingbot, Adminsettings,vr, starttimer
+from DeulexClient import DeulexClient, Adminsettings,vr, starttimer
 from datetime import datetime
 
 __MODULE__ = "PING"
@@ -8,7 +8,7 @@ __**This command helps you to instantly get the ping of the userbot**__
 ──「 **Usage** 」──
 -> `ping`
 """
-@kingbot.on_message(filters.command("ping",vr.get("HNDLR")) & filters.user(Adminsettings))
+@DeulexClient.on_message(filters.command("ping",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def pinger(_, message):
     start = datetime.now()
     end = datetime.now()

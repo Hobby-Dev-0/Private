@@ -1,6 +1,6 @@
 from pyrogram import client , filters
 from pyrogram.types import Message
-from kingbot import kingbot , setbot,Adminsettings
+from DeulexClient import DeulexClient , setbot,Adminsettings
 __MODULE__ = "start"
 __HELP__ = """**Just a start message**
 """

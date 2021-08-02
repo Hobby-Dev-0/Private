@@ -1,7 +1,7 @@
 from gpytranslate import Translator
 from pyrogram import filters
 
-from kingbot import kingbot, vr, Adminsettings
+from DeulexClient import DeulexClient, vr, Adminsettings
 
 trl = Translator()
 
@@ -17,7 +17,7 @@ Reply a message to translate that.
 """
 
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("tr", vr.get("HNDLR")))
+@DeulexClient.on_message(filters.user(Adminsettings) & filters.command("tr", vr.get("HNDLR")))
 async def translate(_, message):
     trl = Translator()
     if message.reply_to_message and (

@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,Adminsettings
+from DeulexClient import DeulexClient, vr ,Adminsettings
 __MODULE__ = "purgeme"
 __HELP__ = """
 __**This command helps you to delete your last 'n' messages in the chat**__
@@ -10,7 +10,7 @@ __**This command helps you to delete your last 'n' messages in the chat**__
 -> `purgeme`
 """
 
-@kingbot.on_message(filters.command("purgeme",vr.get("HNDLR")) & filters.user(Adminsettings))  
+@DeulexClient.on_message(filters.command("purgeme",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def purgeme(client , message):
     msg_text=message.text
     chat_id=message.chat.id
@@ -24,8 +24,8 @@ async def purgeme(client , message):
             while number > 0:
                 try:
                     print(msg_id)
-                    if kingbot.get_messages(chat_id , msg_id).from_user.id == kingbot.get_users("me").id:
-                        await kingbot.delete_messages(chat_id , msg_id)
+                    if DeulexClient.get_messages(chat_id , msg_id).from_user.id == DeulexClient.get_users("me").id:
+                        await DeulexClient.delete_messages(chat_id , msg_id)
                         print("Heyyy")
                         number=number-1
                     msg_id=msg_id-1

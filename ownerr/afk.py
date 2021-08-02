@@ -1,7 +1,7 @@
 import asyncio
 from datetime import datetime
 from pyrogram import filters 
-from kingbot import kingbot, setbot , vr, Adminsettings
+from DeulexClient import DeulexClient, setbot , vr, Adminsettings
  
 import re
 from sql_helper.afk import check_fk, go_fk, no_fk
@@ -22,7 +22,7 @@ async def is_afk_(f, client, message):
 is_afk = filters.create(func=is_afk_, name="is_afk_")
 
 
-@kingbot.on_message(filters.user(Adminsettings) & filters.command("afk", vr.get("HNDLR")))
+@DeulexClient.on_message(filters.user(Adminsettings) & filters.command("afk", vr.get("HNDLR")))
 async def set_afk(client, message):
     sult= await message.edit_text("`Processing..`")
     msge = None  
@@ -42,7 +42,7 @@ async def set_afk(client, message):
     await sult.edit(msg)
 
 
-@kingbot.on_message(
+@DeulexClient.on_message(
     is_afk
     & (filters.mentioned | filters.private)
     & ~filters.me
@@ -85,7 +85,7 @@ async def afk_er(client, message):
     LL = await message.reply(message_to_reply)
 
 
-@kingbot.on_message(filters.outgoing & filters.me & is_afk)
+@DeulexClient.on_message(filters.outgoing & filters.me & is_afk)
 async def no_afke(client, message):
     lol = await check_fk()
     back_alivee = datetime.now()
