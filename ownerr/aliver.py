@@ -2,6 +2,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from DeulexClient import setbot, Adminsettings, DeulexClient, START_TIME , vr, vcbot
 from datetime import datetime
+import os
 import time
 __MODULE__ = "alive"
 __HELP__ = """
@@ -9,7 +10,7 @@ __**This command helps you to check wether userbot is alive**__
 ──「 **Usage** 」──
 -> `alive`
 """
-Alive_pic = "https://telegra.ph/file/664686c15a83ccf26239b.mp4"
+Alive_pic = os.environ.get("Alive_Media", None)
 @DeulexClient.on_message(filters.user(Adminsettings) & filters.command("alive",vr.get("HNDLR")))
 async def gooe_search(client, message):
     start_time = time.time()
