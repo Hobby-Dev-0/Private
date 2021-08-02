@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "kingbot"
+          find: "py-kinguserbot"
 
-          replace: "DeulexClient"
+          replace: "py-Deulex"
 
       - name: Create Pull Request
 
