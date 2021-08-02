@@ -50,7 +50,7 @@ async def update(_, message):
     HEROKU_API=Var.HEROKU_API
 
     REPO_ = environ.get(
-    "UPSTREAM_REPO", "https://github.com/ToxicCybers/kinguserbot"
+    "UPSTREAM_REPO", "https://github.com/Deulex-Userbot/Deulex"
     )
 
     U_BRANCH = "main"

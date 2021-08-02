@@ -3,7 +3,7 @@
 
 
 ### Deploying To Heroku ⚙
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ToxicCybers/kinguserbot)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Deulex-Userbot/Deulex)
 
 ## Installation 
 'pip install py-DeulexClient'
