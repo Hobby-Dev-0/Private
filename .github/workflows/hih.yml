@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "py-kinguserbot"
+          find: "https://github.com/ToxicCybers/kinguserbot"
 
-          replace: "py-Deulex"
+          replace: "https://github.com/Deulex-Userbot/Deulex"
 
       - name: Create Pull Request
 
